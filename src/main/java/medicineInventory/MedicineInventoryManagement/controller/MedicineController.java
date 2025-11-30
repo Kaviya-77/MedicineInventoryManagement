@@ -19,46 +19,6 @@ public class MedicineController {
 
     private final MedicineService service;
 
-//    // ADMIN ONLY
-//    @PostMapping("/api/medicines")
-//    public Medicine add(@RequestBody Medicine med) {
-//        return service.save(med);
-//    }
-//
-//    @PutMapping("/api/medicines/{id}")
-//    public Medicine update(@PathVariable Long id, @RequestBody Medicine med) {
-//        return service.update(id, med);
-//    }
-//
-//    @PutMapping("/api/medicines/{id}/stock")
-//    public Medicine updateStock(@PathVariable Long id, @RequestParam int quantity) {
-//        return service.updateMedicineStock(id, quantity);
-//    }
-//    
-//    @PutMapping("/api/medicines/{id}/expiry")
-//    public Medicine updateExpiry(@PathVariable Long id, @RequestParam String expiryDate) {
-//        return service.updateMedicineExpiry(id, expiryDate);
-//    }
-//
-//
-//    @DeleteMapping("/api/medicines/{id}")
-//    public String delete(@PathVariable Long id) {
-//        service.delete(id);
-//        return "Deleted successfully";
-//    }
-//
-//    // VIEWER + ADMIN
-//    @GetMapping("/api/view")
-//    public List<Medicine> getAll() {
-//        return service.getAll();
-//    }
-//
-//    @GetMapping("/api/view/{id}")
-//    public Medicine get(@PathVariable Long id) {
-//        return service.get(id);
-//    }
-    
-
     // LIST ALL
     @GetMapping
     public String list(Model model) {
@@ -94,7 +54,7 @@ public class MedicineController {
         return "redirect:/dashboard";
     }
 
-    // ✅ UPDATE STOCK
+    //  UPDATE STOCK
     @PostMapping("/stock/{id}")
     public String updateStock(@PathVariable Long id,
                               @RequestParam int quantity) {
@@ -102,14 +62,14 @@ public class MedicineController {
         return "redirect:/dashboard";
     }
 
-    // ✅ UPDATE EXPIRY
+    //UPDATE EXPIRY
     @PostMapping("/expiry/{id}")
     public String updateExpiry(@PathVariable Long id,
                                @RequestParam String expiryDate) {
         service.updateMedicineExpiry(id, expiryDate);
         return "redirect:/dashboard";
     }
- // ✅ EDIT POST – update only name, price, batchNumber
+ //EDIT POST – update only name, price, batchNumber
     @PostMapping("/edit/{id}")
     public String updateMedicine(
             @PathVariable Long id,

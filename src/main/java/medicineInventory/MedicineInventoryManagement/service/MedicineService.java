@@ -6,7 +6,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import medicineInventory.MedicineInventoryManagement.entities.Medicine;
@@ -22,7 +21,7 @@ public class MedicineService {
 
     @Autowired
     private NotificationService notificationService;
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+  //  private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public Medicine save(Medicine m){
         return repo.save(m);
@@ -58,7 +57,7 @@ public class MedicineService {
         medicine.setQuantity(newQuantity);
         Medicine saved = medicineRepository.save(medicine);
 
-        // 🔥 Low stock alert
+        // Low stock alert
         if (newQuantity < 10) {
             notificationService.notifyAdmins(
                     "Low Stock Alert - " + medicine.getName(),
@@ -102,7 +101,6 @@ public class MedicineService {
 
         return saved;
     }
- 
 
 }
 
