@@ -86,7 +86,7 @@ mvn clean spring-boot:run
 Or run the main application class from your IDE.
 
 📸 Screenshots
-<img width="1912" height="852" alt="image" src="https://github.com/user-attachments/assets/2075b5e6-bff9-44a7-8cba-163b0d7ed0af" /> 
+
 <img width="1810" height="736" alt="image" src="https://github.com/user-attachments/assets/1a441754-db4c-4f9c-8bc5-3c3c4ea6f4f1" /> 
 <img width="1802" height="725" alt="image" src="https://github.com/user-attachments/assets/a5f957f4-8043-4875-93b5-55ae6f31558f" />
 <img width="1796" height="733" alt="image" src="https://github.com/user-attachments/assets/14fa3b2d-302c-4980-b7ac-1f197994a8a9" /> 
