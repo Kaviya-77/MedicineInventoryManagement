@@ -1,7 +1,7 @@
 🏥 Medicine Inventory Management System
 
 A secure web-based Medicine Inventory System built with Spring Boot, Thymeleaf, MySQL, and JWT Authentication.
-It supports role-based access (ADMIN / VIEWER), automatic email notifications for low stock and upcoming expiry, and a clean Bootstrap-based UI.
+It supports role-based access (ADMIN / VIEWER), automatic email notifications for low stock and upcoming expiry, and a clean Bootstrap-based UI.This project was created to prevent critical situations in hospitals and pharmacies. Without automatic alerts, medicines could expire unnoticed or run out when urgently needed for patients. The system sends notifications for low stock and upcoming expiries, ensuring medicines are always available and safe, so patient care is never compromised.
 
 
 🚀 Features
