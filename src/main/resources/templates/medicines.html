@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>All Medicines</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Batch</th>
+    <th>Expiry</th>
+    <th>Price</th>
+    <th>Stock</th>
+</tr>
+
+<tr th:each="med : ${medicines}">
+    <td th:text="${med.id}"></td>
+    <td th:text="${med.name}"></td>
+    <td th:text="${med.batchNumber}"></td>
+    <td th:text="${med.expiryDate}"></td>
+    <td th:text="${med.price}"></td>
+    <td th:text="${med.quantity}"></td>
+</tr>
+
+</table>
+
+</body>
+</html>
