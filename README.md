@@ -3,7 +3,7 @@
 A secure web-based Medicine Inventory System built using Spring Boot + Thymeleaf + MySQL + JWT Authentication that allows admin management and viewer access with email notification support.
 
 🚀 Features
-
+The system automatically sends email notifications to the admin when a medicine’s stock quantity falls below 10, ensuring timely restocking and uninterrupted availability. Additionally, it sends expiry alerts when any medicine is within 30 days of its expiry date, helping prevent the use of expired products and ensuring inventory safety.
 Authentication & Security
 JWT-based login system
 Role-based access:
@@ -52,48 +52,6 @@ ORM	JPA + Hibernate
 Build Tool	Maven
 Version Control	Git, GitHub
 
-📂 Project Structure
-src
- ├── controller
- │     ├── AuthController
- │     ├── MedicineController
- │     ├── PageController
- │
- ├── service
- │     ├── MedicineService
- │     ├── EmailService
- │     ├── NotificationService
- │     ├── UserService
- │
- ├── security
- │     ├── JwtAuthenticationFilter
- │     ├── JwtUtil
- │     ├── SecurityConfig
- │     ├── CorsConfig
- │
- ├── repository
- │     ├── MedicineRepository
- │     ├── UserRepository
- │
- ├── entities
- │     ├── Medicine
- │     ├── AppUser
- │
- ├── dto
- │     └── UserDTO
- │
- └── resources
-        ├── templates
-        │     ├── login.html
-        │     ├── register.html
-        │     ├── dashboard.html
-        │     ├── medicine-form.html
-        │     ├── medicine-edit-form.html
-        │
-        └── static/css
-              └── style.css
-
-
 ⚙️ Setup Instructions
 🗄️ Database Configuration (MySQL)
 Update application.properties:
@@ -138,6 +96,9 @@ Sample Test Scenarios
 <img width="1804" height="731" alt="image" src="https://github.com/user-attachments/assets/c8880c9c-db5c-4d3a-b1a4-dfd38455b15c" />
 <img width="1811" height="735" alt="image" src="https://github.com/user-attachments/assets/1e34a45f-d707-4b3f-a417-470af83cad40" />
 <img width="1813" height="735" alt="image" src="https://github.com/user-attachments/assets/3afbaf75-2fd9-40e2-9336-758ade1eb82e" />
+
+🎬 Project Demo (Google Drive)
+https://drive.google.com/file/d/1Qmx5eWRZNMUedauUYvIvG-Dsv5gbxt3z/view?usp=sharing
 
 🌟 Give a Star
 If you like this project, don’t forget to ⭐ the repository!
