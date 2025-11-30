@@ -30,16 +30,32 @@ VCS: Git / GitHub
 
 ⚙️ Setup Instructions
 
-1. Clone the repository
+Clone the repository
+
 git clone https://github.com/Kaviya-77/medicine-inventory.git
 cd medicine-inventory
 
-2. MySQL (create database)
+MySQL (create database)
+
 CREATE DATABASE medicine_db;
 
-3. Update application.properties
+🔐 Authentication & Roles
 
-Replace placeholders with your values:
+ROLE_ADMIN — full access (add/edit/delete/update)
+ROLE_VIEWER — read-only
+
+
+✅ Sample Test Scenarios
+
+Add medicine -> appears on dashboard ,
+Update quantity -> email notification sent ,
+Update expiry -> email notification sent ,
+Reduce quantity below threshold -> low stock email ,
+Viewer login -> no edit/delete UI ,
+Admin login -> can add / edit / delete
+
+
+Update application.properties
 
 # MySQL
 spring.datasource.url=jdbc:mysql://localhost:3306/medicine_db?useSSL=false&serverTimezone=UTC,
@@ -68,21 +84,6 @@ Gmail note: Use an App Password if 2FA is enabled.
 # Run the project
 mvn clean spring-boot:run
 Or run the main application class from your IDE.
-
-🔐 Authentication & Roles
-ROLE_ADMIN — full access (add/edit/delete/update)
-ROLE_VIEWER — read-only
-
-
-✅ Sample Test Scenarios
-
-Add medicine -> appears on dashboard
-Update quantity -> email notification sent
-Update expiry -> email notification sent
-Reduce quantity below threshold -> low stock email
-Viewer login -> no edit/delete UI
-Admin login -> can add / edit / delete
-
 
 📸 Screenshots
 <img width="1912" height="852" alt="image" src="https://github.com/user-attachments/assets/2075b5e6-bff9-44a7-8cba-163b0d7ed0af" /> 
