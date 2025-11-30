@@ -6,29 +6,30 @@ It supports role-based access (ADMIN / VIEWER), automatic email notifications fo
 
 🚀 Features
 
-Add / Edit / Delete medicines (Admin)
-Update stock quantity and expiry date (Admin)
-View-only access for viewers (no admin controls shown)
+Add / Edit / Delete medicines (Admin),
+Update stock quantity and expiry date (Admin),
+View-only access for viewers (no admin controls shown),
 Automatic email notifications using JavaMailSender:
-When quantity gets updated
-When expiry date is changed
+When quantity gets updated,
+When expiry date is changed,
 
-When stock goes below the threshold (default: 10)
-Expiry alerts for medicines within 30 days of expiry
-Secure authentication & authorization with Spring Security + JWT
+When stock goes below the threshold (default: 10),
+Expiry alerts for medicines within 30 days of expiry,
+Secure authentication & authorization with Spring Security + JWT.
 
-🧭 Tech Stack
-Backend: Spring Boot
-Frontend: Thymeleaf + HTML + CSS + Bootstrap
-Database: MySQL
-Security: Spring Security + JWT
-Email: JavaMailSender
-ORM: JPA + Hibernate
-Build: Maven
+🧭 Tech Stack :
+Backend: Spring Boot,
+Frontend: Thymeleaf + HTML + CSS + Bootstrap,
+Database: MySQL.
+Security: Spring Security + JWT.
+Email: JavaMailSender,
+ORM: JPA + Hibernate,
+Build: Maven.
 
 VCS: Git / GitHub
 
 ⚙️ Setup Instructions
+
 1. Clone the repository
 git clone https://github.com/yourusername/medicine-inventory.git
 cd medicine-inventory
@@ -39,15 +40,18 @@ CREATE DATABASE medicine_db;
 3. Update application.properties
 
 Replace placeholders with your values:
+
 # MySQL
 spring.datasource.url=jdbc:mysql://localhost:3306/medicine_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+
 # JWT
 jwt.secret=ReplaceWithLongSecretKey
 jwt.expiration=86400000
+
 # Mail (Gmail example)
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
@@ -55,11 +59,12 @@ spring.mail.username=yourmail@gmail.com
 spring.mail.password=your_app_password
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
+
 # Custom settings
 medicine.low-stock-threshold=10
 medicine.expiry-alert-days=30
-
 Gmail note: Use an App Password if 2FA is enabled.
+
 4. Run the project
 mvn clean spring-boot:run
 Or run the main application class from your IDE.
