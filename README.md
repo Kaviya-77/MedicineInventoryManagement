@@ -31,7 +31,7 @@ VCS: Git / GitHub
 ⚙️ Setup Instructions
 
 1. Clone the repository
-git clone https://github.com/yourusername/medicine-inventory.git
+git clone https://github.com/Kaviya-77/medicine-inventory.git
 cd medicine-inventory
 
 2. MySQL (create database)
@@ -42,30 +42,30 @@ CREATE DATABASE medicine_db;
 Replace placeholders with your values:
 
 # MySQL
-spring.datasource.url=jdbc:mysql://localhost:3306/medicine_db?useSSL=false&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/medicine_db?useSSL=false&serverTimezone=UTC,
+spring.datasource.username=root,
+spring.datasource.password=yourpassword,
+spring.jpa.hibernate.ddl-auto=update,
 spring.jpa.show-sql=true
 
 # JWT
-jwt.secret=ReplaceWithLongSecretKey
+jwt.secret=ReplaceWithLongSecretKey,
 jwt.expiration=86400000
 
 # Mail (Gmail example)
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
-spring.mail.username=yourmail@gmail.com
-spring.mail.password=your_app_password
-spring.mail.properties.mail.smtp.auth=true
+spring.mail.host=smtp.gmail.com,
+spring.mail.port=587,
+spring.mail.username=yourmail@gmail.com,
+spring.mail.password=your_app_password,
+spring.mail.properties.mail.smtp.auth=true,
 spring.mail.properties.mail.smtp.starttls.enable=true
 
 # Custom settings
-medicine.low-stock-threshold=10
-medicine.expiry-alert-days=30
+medicine.low-stock-threshold=10,
+medicine.expiry-alert-days=30,
 Gmail note: Use an App Password if 2FA is enabled.
 
-4. Run the project
+# Run the project
 mvn clean spring-boot:run
 Or run the main application class from your IDE.
 
