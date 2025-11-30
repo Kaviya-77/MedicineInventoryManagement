@@ -1,122 +1,93 @@
 🏥 Medicine Inventory Management System
 
-A secure web-based Medicine Inventory System built using Spring Boot + Thymeleaf + MySQL + JWT Authentication that allows admin management and viewer access with email notification support.
+A secure web-based Medicine Inventory System built with Spring Boot, Thymeleaf, MySQL, and JWT Authentication.
+It supports role-based access (ADMIN / VIEWER), automatic email notifications for low stock and upcoming expiry, and a clean Bootstrap-based UI.
+
 
 🚀 Features
 
-The system automatically sends email notifications to the admin when a medicine’s stock quantity falls below 10, ensuring timely restocking and uninterrupted availability.
+Add / Edit / Delete medicines (Admin)
+Update stock quantity and expiry date (Admin)
+View-only access for viewers (no admin controls shown)
+Automatic email notifications using JavaMailSender:
+When quantity gets updated
+When expiry date is changed
 
-Additionally, it sends expiry alerts when any medicine is within 30 days of its expiry date, helping prevent the use of expired products and ensuring inventory safety.
+When stock goes below the threshold (default: 10)
+Expiry alerts for medicines within 30 days of expiry
+Secure authentication & authorization with Spring Security + JWT
 
-💊 Medicine Management
+🧭 Tech Stack
+Backend: Spring Boot
+Frontend: Thymeleaf + HTML + CSS + Bootstrap
+Database: MySQL
+Security: Spring Security + JWT
+Email: JavaMailSender
+ORM: JPA + Hibernate
+Build: Maven
 
-Add medicine
+VCS: Git / GitHub
 
-Edit medicine (Name, Price, Batch Number only)
-
-Delete medicine
-
-Update stock quantity
-
-Update expiry date separately
-
-📧 Email Notification System
-
-Automatic email alerts when:
-
-Quantity gets updated
-
-Expiry date is changed
-
-Stock goes below threshold level
-
-✅ Implemented using JavaMailSender
-
-🖥️ Modern UI
-
-Thymeleaf-based UI
-
-Bootstrap CSS
-
-Clean dashboards
-
-Role-based visibility
-
-Admin control options hidden for viewers
-
-🏗️ Tech Stack
-Layer	Technology
-Backend	Spring Boot
-Frontend	Thymeleaf + HTML + CSS + Bootstrap
-Database	MySQL
-Security	Spring Security + JWT
-Email	JavaMailSender
-ORM	JPA + Hibernate
-Build Tool	Maven
-Version Control	Git, GitHub
 ⚙️ Setup Instructions
-🗄️ Database Configuration (MySQL)
+1. Clone the repository
+git clone https://github.com/yourusername/medicine-inventory.git
+cd medicine-inventory
 
-Update application.properties:
+2. MySQL (create database)
+CREATE DATABASE medicine_db;
 
-spring.datasource.url=jdbc:mysql://localhost:3306/medicine_db
+3. Update application.properties
+
+Replace placeholders with your values:
+# MySQL
+spring.datasource.url=jdbc:mysql://localhost:3306/medicine_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-
-📧 Mail Configuration
+# JWT
+jwt.secret=ReplaceWithLongSecretKey
+jwt.expiration=86400000
+# Mail (Gmail example)
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
 spring.mail.username=yourmail@gmail.com
 spring.mail.password=your_app_password
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
+# Custom settings
+medicine.low-stock-threshold=10
+medicine.expiry-alert-days=30
 
-▶️ Run Project
+Gmail note: Use an App Password if 2FA is enabled.
+4. Run the project
+mvn clean spring-boot:run
+Or run the main application class from your IDE.
 
-Using terminal:
+🔐 Authentication & Roles
+ROLE_ADMIN — full access (add/edit/delete/update)
+ROLE_VIEWER — read-only
 
-mvn spring-boot:run
-
-
-OR
-Run directly from your IDE.
-
-🔐 Login Credentials
-
-You may register users using:
-
-Role: ADMIN
-
-Role: VIEWER
-
-Admins get full control.
-Viewers only have read access.
 
 ✅ Sample Test Scenarios
 
-Add medicine
+Add medicine -> appears on dashboard
+Update quantity -> email notification sent
+Update expiry -> email notification sent
+Reduce quantity below threshold -> low stock email
+Viewer login -> no edit/delete UI
+Admin login -> can add / edit / delete
 
-Update quantity
-
-Update expiry → mail received
-
-Low stock alert
-
-Viewer cannot edit
-
-Admin can delete
 
 📸 Screenshots
 <img width="1912" height="852" alt="image" src="https://github.com/user-attachments/assets/2075b5e6-bff9-44a7-8cba-163b0d7ed0af" /> 
-<img width="1810" height="736" alt="image" src="https://github.com/user-attachments/assets/1a441754-db4c-4f9c-8bc5-3c3c4ea6f4f1" />
-<img width="1802" height="725" alt="image" src="https://github.com/user-attachments/assets/a5f957f4-8043-4875-93b5-55ae6f31558f" /> 
+<img width="1810" height="736" alt="image" src="https://github.com/user-attachments/assets/1a441754-db4c-4f9c-8bc5-3c3c4ea6f4f1" /> 
+<img width="1802" height="725" alt="image" src="https://github.com/user-attachments/assets/a5f957f4-8043-4875-93b5-55ae6f31558f" />
 <img width="1796" height="733" alt="image" src="https://github.com/user-attachments/assets/14fa3b2d-302c-4980-b7ac-1f197994a8a9" /> 
-<img width="1804" height="731" alt="image" src="https://github.com/user-attachments/assets/c8880c9c-db5c-4d3a-b1a4-dfd38455b15c" />
+<img width="1804" height="731" alt="image" src="https://github.com/user-attachments/assets/c8880c9c-db5c-4d3a-b1a4-dfd38455b15c" /> 
 <img width="1811" height="735" alt="image" src="https://github.com/user-attachments/assets/1e34a45f-d707-4b3f-a417-470af83cad40" /> 
 <img width="1813" height="735" alt="image" src="https://github.com/user-attachments/assets/3afbaf75-2fd9-40e2-9336-758ade1eb82e" />
 
-🎬 Project Demo (Google Drive)
+🎬 Demo
 
-🔗 https://drive.google.com/file/d/1Qmx5eWRZNMUedauUYvIvG-Dsv5gbxt3z/view?usp=sharing
+https://drive.google.com/file/d/1Qmx5eWRZNMUedauUYvIvG-Dsv5gbxt3z/view?usp=sharing
