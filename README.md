@@ -32,7 +32,7 @@ VCS: Git / GitHub
 
 Clone the repository
 
-git clone https://github.com/Kaviya-77/medicine-inventory.git
+git clone https://github.com/Kaviya-77/MedicineInventoryManagement
 cd medicine-inventory
 
 MySQL (create database)
